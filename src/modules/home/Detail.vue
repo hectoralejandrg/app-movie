@@ -2,7 +2,7 @@
   <div class="row q-pa-sm">
     <div class="col-12 col-sm-4 col-lg-3">
       <q-card class="my-card" flat bordered>
-        <q-img :src="data.image">
+        <q-img :src="data?.image">
           <template v-slot:error>
           <div class="absolute-full flex flex-center">Error encountered</div>
         </template>
@@ -11,7 +11,7 @@
     </div>
     <div class="col-12 col-sm-8 q-pt-lg q-pl-lg q-pr-lg">
       <div class="text-h6 text-weight-bolder">
-        {{ data.title }} ({{ data.year }})
+        {{ data?.title }} ({{ data?.year }})
       </div>
       <div class="row no-wrap items-center">
         <Rating :vote="item?.vote_average" :count="item?.vote_count" />
@@ -78,7 +78,7 @@ const dialoger = ref(null);
 const favorites = inject("favorites");
 
 onMounted(() => {
-  id.value = route.params.id;
+  id.value = route?.params?.id;
   refetch();
 });
 
@@ -103,11 +103,11 @@ const openDialog = () => {
 };
 
 const handleAdd = () => {
-  favorites.value = [...favorites.value, item.value];
+  favorites.value = [...favorites?.value, item?.value];
 };
 const handleRemove = () => {
   favorites.value = favorites?.value?.filter(
-    (fav) => fav.id !== Number(id.value)
+    (fav) => fav.id !== Number(id?.value)
   );
 };
 </script>

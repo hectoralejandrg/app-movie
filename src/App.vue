@@ -10,7 +10,7 @@
         </q-toolbar-title>
 
         <q-btn @click="openFav()" flat round dense icon="favorite">
-          <q-badge color="red" floating>{{ favorites.length }}</q-badge
+          <q-badge color="red" floating>{{ favorites?.length }}</q-badge
           ><q-tooltip
             class="bg-purple text-body2"
             anchor="center left"

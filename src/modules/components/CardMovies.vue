@@ -1,12 +1,12 @@
 <template>
   <q-card class="my-card full-height" flat bordered>
-    <q-img :src="data.image">
+    <q-img :src="data?.image">
       <template v-slot:error>
         <div class="absolute-full flex flex-center">Error encountered</div>
       </template>
     </q-img>
     <q-card-section>
-      <div class="text-h6 q-mb-xs q-mt-sm">{{ data.title }}</div>
+      <div class="text-h6 q-mb-xs q-mt-sm">{{ data?.title }}</div>
       <div class="row no-wrap items-center">
         <Rating :vote="item?.vote_average" :count="item?.vote_count" />
       </div>
@@ -71,7 +71,7 @@ const iconPosition = computed(() => {
 });
 
 const handleAdd = () => {
-  favorites.value = [...favorites.value, props.item];
+  favorites.value = [...favorites?.value, props?.item];
 };
 const handleRemove = () => {
   favorites.value = favorites?.value?.filter(
