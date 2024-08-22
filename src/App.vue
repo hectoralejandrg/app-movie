@@ -45,7 +45,9 @@ const dialogFav = ref(null);
 provide("favorites", favorites);
 
 onMounted(() => {
-  favorites.value = JSON.parse(localStorage.getItem("favorites"));
+  if (JSON.parse(localStorage.getItem("favorites"))) {
+    favorites.value = JSON.parse(localStorage.getItem("favorites"));
+  }
 });
 
 watch(favorites, (newFav) => {
