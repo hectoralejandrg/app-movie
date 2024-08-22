@@ -60,7 +60,7 @@ const data = computed(() => {
 });
 
 const isFavorite = computed(() => {
-  return favorites?.value?.some((fav) => {
+  return favorites.value?.some((fav) => {
     return fav.id === props?.item?.id;
   });
 });
@@ -71,10 +71,10 @@ const iconPosition = computed(() => {
 });
 
 const handleAdd = () => {
-  favorites.value = [...favorites?.value, props?.item];
+  favorites.value = [...favorites.value, props?.item];
 };
 const handleRemove = () => {
-  favorites.value = favorites?.value?.filter(
+  favorites.value = favorites.value?.filter(
     (fav) => fav.id !== props?.item?.id
   );
 };

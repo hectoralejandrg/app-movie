@@ -94,7 +94,7 @@ const data = computed(() => {
   };
 });
 const isFavorite = computed(() => {
-  return favorites?.value?.some((fav) => {
+  return favorites.value?.some((fav) => {
     return fav.id === Number(id.value);
   });
 });
@@ -103,10 +103,10 @@ const openDialog = () => {
 };
 
 const handleAdd = () => {
-  favorites.value = [...favorites?.value, item?.value];
+  favorites.value = [...favorites.value, item?.value];
 };
 const handleRemove = () => {
-  favorites.value = favorites?.value?.filter(
+  favorites.value = favorites.value?.filter(
     (fav) => fav.id !== Number(id?.value)
   );
 };
